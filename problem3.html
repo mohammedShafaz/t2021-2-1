@@ -1,0 +1,66 @@
+<!-- Problem-3:  With a single integer as the input, generate the following until a = x [series of numbers as shown in the below examples]
+
+    Output: (examples)
+        1) input a = 1, then output : 1
+        2) input a = 2, then output : 1
+        3) input a = 3, then output : 1, 3, 5
+        4) input a = 4, then output : 1, 3, 5
+        5) input a = 5, then output : 1, 3, 5, 7, 9
+        6) input a = 6, then output : 1, 3, 5, 7, 9
+        .
+        .
+        7) input a = x, then output : 1, 3, 5, 7, ..... -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Enter the number :</label>
+    <input type="number" id="num">
+    <button id="sub">Submit</button>
+
+    <div>
+        <h3> Output:</h3>
+
+        <h4 id="result"></h4>
+    </div>
+</body>
+<script>
+    var submit = document.querySelector("#sub")
+    submit.addEventListener("click", calc)
+
+    function calc() {
+
+        var num = Number(document.querySelector("#num").value);
+        var res = ``
+
+        console.log(num);
+
+        for (let i = 0; i <= num; i++) {
+            if (i % 2 != 0) {
+                res += i
+                res += ","
+                if (i > 2) {
+                    num++
+                }
+
+
+            }
+
+        }
+        document.querySelector("#result").innerHTML = res
+
+
+
+    }
+</script>
+
+</html>
